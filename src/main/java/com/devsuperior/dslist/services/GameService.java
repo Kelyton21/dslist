@@ -3,6 +3,8 @@ import java.util.List;
 import com.devsuperior.dslist.dto.GameDTO;
 import com.devsuperior.dslist.dto.GameMinDTO;
 import com.devsuperior.dslist.entities.Game;
+import com.devsuperior.dslist.projects.GameMinProjection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +30,14 @@ public class GameService {
     @Transactional(readOnly = true) // Indica que o método é somente leitura
     public List<GameMinDTO> findAll(){
         List<Game> result = gameRepository.findAll();
+        List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
+        return dto;
+    }
+
+    // Método que retorna todos os jogos de uma lista específica
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(long listId){
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
         List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
         return dto;
     }
