@@ -14,8 +14,8 @@ Para isso foi utilizado as seguintes tecnologias
 - Json
 - Postgreen
 
-## Modelo de classe
-https://github.com/Kelyton21/dslist/issues/1#issue-3103772212
+### Modelo de Classe
+![Modelo de Classe UML](https://github.com/Kelyton21/dslist/assets/101889980/244d9f69-7006-444a-a0aa-d2907409c122)
 
-## Retorno do chamado do serviço
-https://github.com/Kelyton21/dslist/issues/2#issue-3103778673
+### Retorno do Chamado do Serviço
+![Retorno do Chamado do Serviço](https://github.com/Kelyton21/dslist/assets/101889980/c8507850-891d-4034-8c83-5034177d61b6)
